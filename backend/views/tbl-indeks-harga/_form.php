@@ -14,7 +14,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'id_bahan')->dropDownList($data_bahan, ['prompt' => 'Pilih Bahan'])->label('Bahan') ?>
 
-    <?= $form->field($model, 'id_pekerjaan')->textInput() ?>
+	<?= $form->field($model, 'id_pekerjaan')->dropDownList($data_pekerjaan, ['prompt' => 'Pilih Pekerjaan'])->label('Pekerjaan') ?>
 
     <?= $form->field($model, 'satuan')->textInput(['maxlength' => true]) ?>
 

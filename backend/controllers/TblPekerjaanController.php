@@ -3,8 +3,6 @@
 namespace backend\controllers;
 
 use Yii;
-use common\models\TblIndeksHarga;
-use common\models\TblBahan;
 use common\models\TblPekerjaan;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
@@ -12,9 +10,9 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * TblIndeksHargaController implements the CRUD actions for TblIndeksHarga model.
+ * TblPekerjaanController implements the CRUD actions for TblPekerjaan model.
  */
-class TblIndeksHargaController extends Controller
+class TblPekerjaanController extends Controller
 {
     /**
      * @inheritdoc
@@ -32,13 +30,13 @@ class TblIndeksHargaController extends Controller
     }
 
     /**
-     * Lists all TblIndeksHarga models.
+     * Lists all TblPekerjaan models.
      * @return mixed
      */
     public function actionIndex()
     {
         $dataProvider = new ActiveDataProvider([
-            'query' => TblIndeksHarga::find(),
+            'query' => TblPekerjaan::find(),
         ]);
 
         return $this->render('index', [
@@ -47,7 +45,7 @@ class TblIndeksHargaController extends Controller
     }
 
     /**
-     * Displays a single TblIndeksHarga model.
+     * Displays a single TblPekerjaan model.
      * @param integer $id
      * @return mixed
      */
@@ -59,30 +57,25 @@ class TblIndeksHargaController extends Controller
     }
 
     /**
-     * Creates a new TblIndeksHarga model.
+     * Creates a new TblPekerjaan model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new TblIndeksHarga();
-
-        $data_bahan = TblBahan::find()->select('id_bahan','nama')->orderBy('id_bahan')->column();
-        $data_pekerjaan = TblPekerjaan::find()->select('id_pekerjaan','nama')->orderBy('id_pekerjaan')->column();
+        $model = new TblPekerjaan();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id_indeks_harga]);
+            return $this->redirect(['index']);
         } else {
             return $this->render('create', [
                 'model' => $model,
-                'data_bahan' => $data_bahan,
-                'data_pekerjaan' => $data_pekerjaan
             ]);
         }
     }
 
     /**
-     * Updates an existing TblIndeksHarga model.
+     * Updates an existing TblPekerjaan model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -92,7 +85,7 @@ class TblIndeksHargaController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id_indeks_harga]);
+            return $this->redirect(['view', 'id' => $model->id_pekerjaan]);
         } else {
             return $this->render('update', [
                 'model' => $model,
@@ -101,7 +94,7 @@ class TblIndeksHargaController extends Controller
     }
 
     /**
-     * Deletes an existing TblIndeksHarga model.
+     * Deletes an existing TblPekerjaan model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -114,15 +107,15 @@ class TblIndeksHargaController extends Controller
     }
 
     /**
-     * Finds the TblIndeksHarga model based on its primary key value.
+     * Finds the TblPekerjaan model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return TblIndeksHarga the loaded model
+     * @return TblPekerjaan the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = TblIndeksHarga::findOne($id)) !== null) {
+        if (($model = TblPekerjaan::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');

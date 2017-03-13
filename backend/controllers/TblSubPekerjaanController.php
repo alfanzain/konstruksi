@@ -3,18 +3,17 @@
 namespace backend\controllers;
 
 use Yii;
-use common\models\TblIndeksHarga;
-use common\models\TblBahan;
-use common\models\TblPekerjaan;
+use common\models\TblSubPekerjaan;
+use common\models\TblJenisPekerjaan;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * TblIndeksHargaController implements the CRUD actions for TblIndeksHarga model.
+ * TblSubPekerjaanController implements the CRUD actions for TblSubPekerjaan model.
  */
-class TblIndeksHargaController extends Controller
+class TblSubPekerjaanController extends Controller
 {
     /**
      * @inheritdoc
@@ -32,13 +31,13 @@ class TblIndeksHargaController extends Controller
     }
 
     /**
-     * Lists all TblIndeksHarga models.
+     * Lists all TblSubPekerjaan models.
      * @return mixed
      */
     public function actionIndex()
     {
         $dataProvider = new ActiveDataProvider([
-            'query' => TblIndeksHarga::find(),
+            'query' => TblSubPekerjaan::find(),
         ]);
 
         return $this->render('index', [
@@ -47,7 +46,7 @@ class TblIndeksHargaController extends Controller
     }
 
     /**
-     * Displays a single TblIndeksHarga model.
+     * Displays a single TblSubPekerjaan model.
      * @param integer $id
      * @return mixed
      */
@@ -59,30 +58,28 @@ class TblIndeksHargaController extends Controller
     }
 
     /**
-     * Creates a new TblIndeksHarga model.
+     * Creates a new TblSubPekerjaan model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new TblIndeksHarga();
+        $model = new TblSubPekerjaan();
 
-        $data_bahan = TblBahan::find()->select('id_bahan','nama')->orderBy('id_bahan')->column();
-        $data_pekerjaan = TblPekerjaan::find()->select('id_pekerjaan','nama')->orderBy('id_pekerjaan')->column();
+        $data_jenis_pekerjaan = TblJenisPekerjaan::find()->select('id_jenis_pekerjaan','nama')->orderBy('id_jenis_pekerjaan')->column();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id_indeks_harga]);
+            return $this->redirect(['index']);
         } else {
             return $this->render('create', [
                 'model' => $model,
-                'data_bahan' => $data_bahan,
-                'data_pekerjaan' => $data_pekerjaan
+                'data_jenis_pekerjaan' => $data_jenis_pekerjaan,
             ]);
         }
     }
 
     /**
-     * Updates an existing TblIndeksHarga model.
+     * Updates an existing TblSubPekerjaan model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -91,17 +88,20 @@ class TblIndeksHargaController extends Controller
     {
         $model = $this->findModel($id);
 
+        $data_jenis_pekerjaan = TblJenisPekerjaan::find()->select('id_jenis_pekerjaan','nama')->orderBy('id_jenis_pekerjaan')->column();
+
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id_indeks_harga]);
+            return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('update', [
                 'model' => $model,
+                'data_jenis_pekerjaan' => $data_jenis_pekerjaan,
             ]);
         }
     }
 
     /**
-     * Deletes an existing TblIndeksHarga model.
+     * Deletes an existing TblSubPekerjaan model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -114,15 +114,15 @@ class TblIndeksHargaController extends Controller
     }
 
     /**
-     * Finds the TblIndeksHarga model based on its primary key value.
+     * Finds the TblSubPekerjaan model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return TblIndeksHarga the loaded model
+     * @return TblSubPekerjaan the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = TblIndeksHarga::findOne($id)) !== null) {
+        if (($model = TblSubPekerjaan::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');

@@ -16,6 +16,7 @@ AppAsset::register($this);
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>">
 <head>
+
     <meta charset="<?= Yii::$app->charset ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?= Html::csrfMetaTags() ?>
@@ -36,7 +37,11 @@ AppAsset::register($this);
     ]);
     $menuItems = [
         ['label' => 'See Webpage', 'url' => Yii::$app->urlManagerFrontend->createUrl('site/index')],
-        ['label' => 'Data Bahan', 'url' => ['/tbl-bahan/']]
+        ['label' => 'Data Bahan', 'url' => ['/tbl-bahan/']],
+        ['label' => 'Data Jenis Pekerjaan', 'url' => ['/tbl-jenis-pekerjaan/']],
+        ['label' => 'Data Sub Pekerjaan', 'url' => ['/tbl-sub-pekerjaan/']],
+        ['label' => 'Data Pekerjaan', 'url' => ['/tbl-pekerjaan/']],
+        ['label' => 'Data Indeks Harga', 'url' => ['/tbl-indeks-harga/']],
     ];
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
@@ -68,9 +73,6 @@ AppAsset::register($this);
 
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
-
-        <p class="pull-right"><?= Yii::powered() ?></p>
     </div>
 </footer>
 

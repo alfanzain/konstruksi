@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 10, 2017 at 10:11 AM
+-- Generation Time: Mar 13, 2017 at 10:24 AM
 -- Server version: 10.1.8-MariaDB
 -- PHP Version: 5.5.30
 
@@ -62,7 +62,7 @@ INSERT INTO `tbl_bahan` (`id_bahan`, `nama`) VALUES
 (5, 'Besi'),
 (6, 'Besi plat baja'),
 (7, 'Besi siku L 30.30.3'),
-(8, 'Kawat las;"'),
+(8, 'Kawat las'),
 (9, 'Kawat las listrik'),
 (10, ' Besi scuare tube'),
 (11, ' Besi lis kaca (1x1)cm'),
@@ -70,7 +70,7 @@ INSERT INTO `tbl_bahan` (`id_bahan`, `nama`) VALUES
 (13, 'Pintu gulung besi'),
 (14, 'Pintu lipat'),
 (15, 'Sun Screen Aluminium'),
-(16, 'Rolling dor alluminium'),
+(16, 'Rolling dor Aluminium'),
 (17, 'Profil alluminium'),
 (18, 'Skrup fixer'),
 (19, 'Sealant'),
@@ -81,20 +81,20 @@ INSERT INTO `tbl_bahan` (`id_bahan`, `nama`) VALUES
 (24, 'Venetions blinds dan vertical blinds (tirai)'),
 (25, 'Besi Strip'),
 (26, 'Kawat nyamuk'),
-(27, 'Baja strip (0'),
+(27, 'Baja strip (0,2 x 2) cm'),
 (28, 'Jendela nako (rangka + kaca 5 mm)'),
-(29, 'Paku skrup 1 cm – 2'),
+(29, 'Paku skrup 1 cm – 2,5 cm'),
 (30, 'Seng plat '),
-(31, 'Paku 1 cm - 2'),
+(31, 'Paku 1 cm - 2,5 cm'),
 (32, 'Papan kayu kelas II'),
 (33, 'Rangka metal hollow 40.40.2 mm'),
-(34, 'Assesoris (perkuatan'),
+(34, 'Assesoris (perkuatan,las , dll)'),
 (35, 'Semen Portland'),
 (36, 'Pasir Beton'),
 (37, 'Kerikil (Maks 30mm)'),
 (38, 'Kerikil'),
 (39, 'Kerikil (2cm/3cm)'),
-(40, 'Air;"'),
+(40, 'Air'),
 (41, 'Strorox-100'),
 (42, 'Waterstop lebar 150 mm'),
 (43, 'Waterstop lebar 200 mm'),
@@ -156,8 +156,8 @@ INSERT INTO `tbl_bahan` (`id_bahan`, `nama`) VALUES
 (99, 'Reng (3 x 4) cm'),
 (100, 'Paku 7 cm – 10 cm'),
 (101, 'Paku 5 dan 7 cm'),
-(102, 'Teakwood 4 mm'),
-(103, 'Balok kayu'),
+(102, 'Teakwood 4 mm, 120x240'),
+(103, 'Balok kayu, 6 x 12'),
 (104, 'Plywood 4mm'),
 (105, 'Paku skrup 10 cm'),
 (106, 'Bilik bambu'),
@@ -215,7 +215,7 @@ INSERT INTO `tbl_bahan` (`id_bahan`, `nama`) VALUES
 (158, 'Vynil'),
 (159, 'Wallpaper'),
 (160, 'Floor hardener'),
-(161, 'Papn kayu kelas I'),
+(161, 'Papan kayu kelas I'),
 (162, 'skrup 5 cm'),
 (163, 'Soda api'),
 (164, 'Sabun'),
@@ -250,8 +250,8 @@ INSERT INTO `tbl_bahan` (`id_bahan`, `nama`) VALUES
 (193, 'Paku biasa ½”-1”'),
 (194, 'Asbes gel 92x250'),
 (195, 'Paku pancing 6x23 '),
-(196, 'Bubung stel gel. '),
-(197, 'Paku skrup 3'),
+(196, 'Bubung stel gel'),
+(197, 'Paku skrup 3,5"'),
 (198, 'Nok paten 92cm'),
 (199, 'Genteng beton'),
 (200, 'Paku biasa 2”-5”'),
@@ -264,11 +264,11 @@ INSERT INTO `tbl_bahan` (`id_bahan`, `nama`) VALUES
 (207, 'Nok genteng aspal'),
 (208, 'Kayu balok borneo'),
 (209, 'Nok genteng metal'),
-(210, 'Seng plat 3x6""'),
+(210, 'Seng plat 3"x6"'),
 (211, 'Seng gel 3”x6”'),
-(212, 'Seng plat 3""x6"" bjls 28'),
-(213, 'Almn gel tbl0'),
-(214, 'Paku hak panj 15cm'),
+(212, 'Seng plat 3"x6" bjls 28'),
+(213, 'Almn gel tbl0, 55'),
+(214, 'Paku hak panjang 15cm'),
 (215, 'Nok standar 40x18'),
 (216, 'Dolken kayu • • 8-10/400 cm'),
 (217, 'Koral beton '),
@@ -299,7 +299,7 @@ INSERT INTO `tbl_bahan` (`id_bahan`, `nama`) VALUES
 (242, 'Gypsum Board'),
 (243, 'Paku skrup'),
 (244, 'Profil Allum""T""'),
-(245, 'Kawat dia 4 mm'),
+(245, 'Kawat diameter 4 mm'),
 (246, 'Ramset'),
 (247, 'Akustik60 x 120 '),
 (248, 'Sirtu'),
@@ -326,15 +326,15 @@ INSERT INTO `tbl_bahan` (`id_bahan`, `nama`) VALUES
 (269, 'Pipa galvanis 3/4”'),
 (270, 'Pipa galvanis'),
 (271, 'Pipa galvanis 11/2”'),
-(272, 'Pipa galvanis 3""'),
-(273, 'Pipa galvanis 4""'),
+(272, 'Pipa galvanis 3"'),
+(273, 'Pipa galvanis 4"'),
 (274, 'Perlengkapan'),
-(275, 'Pipa PVC 1/2""'),
-(276, 'Pipa PVC 1""'),
+(275, 'Pipa PVC 1/2"'),
+(276, 'Pipa PVC 1"'),
 (277, 'Pipa PVC 11/2”'),
-(278, 'Pipa PVC 2""'),
+(278, 'Pipa PVC 2"'),
 (279, 'Pipa PVC 21/2”'),
-(280, 'Pipa PVC 3""'),
+(280, 'Pipa PVC 3"'),
 (281, 'Pipa tanah'),
 (282, 'Pipa tanah dia 15'),
 (283, 'Pipa PVC Ø 63 mm'),
@@ -428,7 +428,7 @@ INSERT INTO `tbl_bahan` (`id_bahan`, `nama`) VALUES
 (371, 'Valve Ø 900 mm'),
 (372, 'Valve Ø 1000 mm'),
 (373, 'Valve Ø 1100 mm'),
-(374, 'Valve Ø 1200 mm;"'),
+(374, 'Valve Ø 1200 mm'),
 (375, 'Tee Ø 150 mm'),
 (376, 'Tee Ø 200 mm'),
 (377, 'Tee Ø 250 mm'),
@@ -565,6 +565,34 @@ CREATE TABLE `tbl_sub_pekerjaan` (
   `nama_sub_pekerjaan` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `tbl_sub_pekerjaan`
+--
+
+INSERT INTO `tbl_sub_pekerjaan` (`id`, `id_jenis`, `nama_sub_pekerjaan`) VALUES
+(1, 0, 'HARGA SATUAN PEKERJAAN BESI DAN ALUMUNIUM'),
+(2, 0, 'HARGA SATUAN PEKERJAAN BETON'),
+(3, 0, 'HARGA SATUAN PEKERJAAN BETON PRACETAK'),
+(4, 0, 'HARGA SATUAN PEKERJAAN PASANGAN DINDING'),
+(5, 0, 'HARGA SATUAN PEKERJAAN PLESTERAN'),
+(6, 0, 'HARGA SATUAN PEKERJAAN PENUTUP LANTAI DAN PENUTUP DINDING'),
+(7, 0, 'HARGA SATUAN PEKERJAAN KAYU'),
+(8, 0, 'HARGA SATUAN PEKERJAAN KUNCI DAN KACA'),
+(9, 0, 'HARGA SATUAN PEKERJAAN PENGECATAN'),
+(10, 0, 'HARGA SATUAN PEKERJAAN PENUTUP ATAP'),
+(11, 0, 'HARGA SATUAN PEKERJAAN PERSIAPAN'),
+(12, 0, 'HARGA SATUAN PEKERJAAN PERSIAPAN'),
+(13, 0, 'HARGA SATUAN PEKERJAAN TANAH'),
+(14, 0, 'HARGA SATUAN PEKERJAAN PONDASI'),
+(15, 0, 'SATUAN PEKERJAAN LANGIT-LANGIT (PLAFOND)'),
+(16, 0, 'HARGA SATUAN PEKERJAAN SANITASI DALAM GEDUNG'),
+(17, 0, 'HARGA SATUAN PEKERJAAN SANITASI DALAM GEDUNG'),
+(18, 0, 'HARGA SATUAN PEKERJAAN PEMASANGAN PIPA'),
+(19, 0, 'HARGA SATUAN PEKERJAAN PEMOTONGAN PIPA'),
+(20, 0, 'HARGA SATUAN PEKERJAAN PEMASANGAN AKSESORIS PIPA'),
+(21, 0, 'HARGA SATUAN PEKERJAAN PENYAMBUNGAN PIPA BARU KE PIPA LAMA'),
+(22, 0, 'HARGA SATUAN PEKERJAAN PENGETESAN PIPA');
+
 -- --------------------------------------------------------
 
 --
@@ -688,7 +716,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `tbl_bahan`
 --
 ALTER TABLE `tbl_bahan`
-  MODIFY `id_bahan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=512;
+  MODIFY `id_bahan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=404;
 --
 -- AUTO_INCREMENT for table `tbl_data_projek`
 --
@@ -723,7 +751,7 @@ ALTER TABLE `tbl_projek_version`
 -- AUTO_INCREMENT for table `tbl_sub_pekerjaan`
 --
 ALTER TABLE `tbl_sub_pekerjaan`
-  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 --
 -- AUTO_INCREMENT for table `tbl_user`
 --
